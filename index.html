@@ -1,6 +1,7 @@
 <html>
    <head>
       <title>form</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
@@ -79,11 +80,19 @@
          padding-top: 20px;
          text-align: center;
          }
+        @media only screen and (max-width: 800px) {
+            form {
+            width: 80%;
+            }
+            .head{
+            height:20vh;
+            }
+          }
       </style>
    </head>
    <body>
       <div class="head"></div>
-      <form name="f1" onsubmit="return check(this)">
+      <form name="f1" onsubmit="return check()">
          <hr noshade color="rgb(179, 136, 255)" size=7 width="100%">
          <div class="matter">
             <h1>Personal Info</h1>
@@ -104,7 +113,7 @@
             <label>Date of Birth</label><br>
             <input type="date" id="dob" required><br>                                                           
             <label>Contact Number</label><br>
-            <input type="tel" id="phone" required><br>
+            <input type="text" id="phone" required><br>
             <label>E-mail id</label><br>
             <input type="email" id="mail" required><br>
             <label>Chalkpad password</label><br>
@@ -126,20 +135,20 @@
          });
        </script>
        <script>
-          function check(thisform)
+          function check()
           {
               var a=document.getElementById("name").value;
-//              var b=document.getElementById("fname").value;
-//              var c=document.getElementById("uni").value;
-//              var d=document.getElementById("roll").value;
-//              var e=document.getElementById("dob").value;
-//              var f=document.getElementById("mail").value;
-//              var g=document.getElementById("password-field").value;
-                var h=document.getElementsById("branch").value;
-              alert(h);
-//              
-              
-          }
+              var b=document.getElementById("fname").value;
+              var c=document.getElementById("uni").value;
+              var d=document.getElementById("roll").value;
+              var e=document.getElementById("dob").value;
+              var f=document.getElementById("mail").value;
+              var g=document.getElementById("password-field").value;
+              var h=document.getElementsById("branch").value;
+              var i=document.getElementById("phone").value;
+            
+    }
+   
       </script>
        
    </body>
