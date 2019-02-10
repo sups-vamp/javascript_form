@@ -111,7 +111,7 @@
             <label>Roll No.</label><br>
             <input type="text" id="rollno" required><br>
             <label>Date of Birth</label><br>
-            <input type="date" id="dob" required><br>                                                           
+            <input type="date" id="dob" required><br>
             <label>Contact Number</label><br>
             <input type="text" id="phone" required><br>
             <label>E-mail id</label><br>
@@ -124,7 +124,7 @@
       <div class="foot">All rights reserved &copy;</div>
       <script>
          $(".toggle-password").click(function() {
-         
+
          $(this).toggleClass("fa-eye fa-eye-slash");
          var input = $($(this).attr("toggle"));
          if (input.attr("type") == "password") {
@@ -135,20 +135,31 @@
          });
        </script>
        <script>
+       //this js func validates fields like name, father's name,email and contact number.
           function check()
           {
               var a=document.getElementById("name").value;
               var b=document.getElementById("fname").value;
-              var c=document.getElementById("uni").value;
-              var d=document.getElementById("roll").value;
-              var e=document.getElementById("dob").value;
-              var f=document.getElementById("mail").value;
-              var g=document.getElementById("password-field").value;
-              var h=document.getElementsById("branch").value;
-              var i=document.getElementById("phone").value;
-            
-    }
-   
+              var c=document.getElementById("phone").value;
+              var d=document.getElementById("mail").value;
+              var ex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+              if(a.length<=2)
+                alert('enter a valid name');
+                else if (b.length<=2) {
+                  alert("father's name incorrect");
+                }
+                else if (c.length<10 ||c.length>10) {
+                  alert('enter a valid contact number!');
+                }
+                else if (!ex.test(d)) {
+                  alert('enter valid email');
+                }
+                else {
+                    alert('form submitted successfully');
+                }
+         }
+
+
       </script>
-       
+
    </body>
